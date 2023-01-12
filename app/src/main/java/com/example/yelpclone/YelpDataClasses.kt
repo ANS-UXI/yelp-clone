@@ -17,8 +17,9 @@ data class YelpRestaurant(val name: String,
                           val location: YelpLocation) {
 
     fun distanceInKMS(): String {
-        var distanceKM = ".2f".format(distance * 0.001)
-        return "$distanceKM km"
+        val distanceKM = distance * 0.001
+        val distanceInString = String.format("%.2f km",distanceKM)
+        return distanceInString
     }
 }
 
